@@ -49,6 +49,6 @@ class Cart extends Model
         return $insert;
     }
     public function clearCart() {
-        
+        trs
     }
 }
