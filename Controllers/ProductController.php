@@ -85,8 +85,9 @@ class ProductController extends BaseController
 
     public function cart()
     {
-        $data = $this->cartModel->getCart();
-        return $this->view("page.cart", "page.cart", ['cart' => $data]);
+        $dataCart = $this->cartModel->getCart();
+        $Cart_tmp = $dataCart;
+        return $this->view("page.cart", "page.cart", ['cart' => $Cart_tmp]);
     }
     public function addToCart()
     {
@@ -99,6 +100,7 @@ class ProductController extends BaseController
             $getPrice = $_POST['price'];
             $getQuantity = $_POST['quantity'];
             $data = $this->cartModel->addCart($getId, $getName, $getPrice, $getQuantity, $ck);
+            $data = $this->cartModel->addTmp($getId, $getName, $getPrice, $getQuantity, $ck);
 
             header('Location: http://localhost:3000/PHP/khanh/index.php?controller=product&action=cart');
         }
@@ -108,6 +110,7 @@ class ProductController extends BaseController
         $getId = $_GET['id'];
 
         $data = $this->cartModel->rm($getId);
+        $data = $this->cartModel->rm_tmp($getId);
         header('Location: http://localhost:3000/PHP/khanh/index.php?controller=product&action=cart');
     }
     public function invoice()
@@ -125,8 +128,8 @@ class ProductController extends BaseController
             $pay = $total;
             
             $data = $this->cartModel->insertInvoice($id, $ck, $pay);
-            
             header('Location: http://localhost:3000/PHP/khanh/index.php?controller=product&action=cart&pay=done');
+            $clear = $this->cartModel->clearTmp();
         }
     }
 }

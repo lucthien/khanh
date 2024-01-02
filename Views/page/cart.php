@@ -26,10 +26,10 @@
 
             <div class="column-labels">
                 <label class="product-image">Image</label>
-                <label class="product-details">Product</label>
+                <label class="product-details">Name</label>
                 <label class="product-price">Price</label>
                 <label class="product-quantity">Quantity</label>
-                <label class="product-removal">Remove</label>
+                <label class="product-removal">Action</label>
                 <label class="product-line-price">Total</label>
             </div>
             <?php foreach ($cart as $i) : ?>
@@ -85,9 +85,9 @@
                         </div>
                         <button type="submit" style="text-decoration: none;" class="checkout">Checkout</button>
                     </form>
-    <?php endforeach ?>
-<?php endforeach ?>
-    </div>
+                <?php endforeach ?>
+            <?php endforeach ?>
+        </div>
     </div>
     <script src="Public/js/cart.js"></script>
     <script src="Public/js/main.js"></script>

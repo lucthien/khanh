@@ -39,7 +39,7 @@
                     <div class="circle" style="width: 15px; height: 15px; border-radius: 50%; position: absolute; font-size: 12px; color: red; margin-left: 15px; font-weight: bold;">
                         <p style="margin-left: 4px;"><?php echo $sl;?></p>
                     </div>
-                    <a href="index.php?controller=product&action=cart"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
+                    <a href="index.php?controller=product&action=cart&status=new"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
                 </li>
             </ul>
         </div>

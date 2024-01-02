@@ -54,6 +54,11 @@ class Database
         $result = $this->pdo->query($e)->fetchAll();
         return $result;
     }
+    public function add_cart($insert)
+    {
+        $result = $this->pdo->query($insert);
+        return $result;
+    }
 
     public function countId($select)
     {
